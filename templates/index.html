@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <form method=post>
+        <h2>Current options</h2>
+        <ul>
+            <li>Message: {{msg}}</li>
+            <li>Dimenations: {{wid}} by {{ht}}</li>
+            <li>Text color: {{txt_color}} </li>
+            <li>Text size: {{text_size}}</li>
+            <li>Background color: {{back_color}}</li>
+            <li>Direction of text: {{dire}}</li>
+            <li>Text type: {{tType}}</li>
+            <li>Font: {{font}}</li>
+            <li>Image rotation: {{rot}}</li>
+            <li>Image type {{ext}}</li>
+        </ul>
+        <!-- TODO insert refresh button to update current options -->
+        <a download="{{imageName}}}" href="{{imageName}}" title="{{imageName}}">
+            <button>Download Image</button>
+        </a>
+        <h2>Message</h2>
+        <label>Enter text here:
+            <input type="text" name="msg" id="msg" value="{{msg}}" />
+        </label>
+        <br>
+        <label>Text size:
+            <input type="number" name="text_size" id="text_size" value="16"/>
+        </label>
+        <span>
+            <h2>Image Dimensions (in pixels)</h2>
+            <!-- TODO insert options for popular sites -->
+            <label>Width:
+                <input type="number" name="wid" id="wid" value="{{wid}}" />
+            </label>
+            <label>Height:
+                <input type="number" name="ht" id="ht" value="{{ht}}" />
+            </label>
+        </span>
+        <span>
+            <h2>Color Scheme</h2>
+            <label>Text color:
+                <input type="color" name="txt_color" id="txt_color" value="{{tx_color}}" />
+            </label>
+            <label>Background color:
+                <input type="color" name="back_color" id="back_color" value="{{back_color}}">
+            </label>
+        </span>
+        <p>
+            <h1>Additional options</h1>
+            Text direction
+            <br>
+            <label>Right to left
+                <input type="radio" name="dir" value="rtl" id="dire" checked="checked" />
+            </label>
+            <label>Left to right
+                    <input type="radio" name="dir" value="ltr" id="dire" />
+            </label>
+            <label>Top to bottm
+                <input type="radio" name="dir" value="ttb" id="dire" />
+            </label>
+            <label>Bottom to top
+                    <input type="radio" name="dir" value="btt" id="dire" />
+            </label>
+        </p>
+        Text format
+        <br>
+        <label>Plaintext
+            <input type="radio" name="tType" id="tType" value="plain">
+        </label>
+        <label>Binary
+            <input type="radio" name="tType" id="tType" value="bin" checked="checked" />
+        </label>
+        <p>
+            <label>Text style:
+                <select name="font">
+                    <option name="arial" id="arial" selected="selected">Arial</option>
+                    <option name="arialb" id="arialb">Arial Black</option>
+                    <option name="cent" id="cent">Century Gothic</option>
+                    <option name="comic" id="comic">Comic Sans MS</option>
+                    <option name="courier" id="courier">Courier New</option>
+                    <option name="georgia" id="georgia">Georgia</option>
+                    <option name="impact" id="impact">Impact</option>
+                    <option name="lg" id="lg">Lucida Grande</option>
+                    <option name="pal" id="pal">Palatino</option>
+                    <option name="tahoma" id="tahoma">Tahoma</option>
+                    <option name="times" id="times">Times New Roman</option>
+                    <option value="tre" id="treb">Trebuchet MS</option>
+                    <option value="ver" id="ver">Verdana</option>
+                </select>
+            </label>
+        </p>
+        <span>Image rotation
+            <input type="number" name="rot" id="rot" value="0"/>
+        </span>
+        <br>
+        <label>Image type
+            <select name="ext">
+                <option name=".jpg" id=".jpg" selected="selected">JPG</option>
+                <option name=".gif" id=".gif">GIF</option>
+                <option name=".bmp" id=".bmp">BMP</option>
+            </select>
+        </label>
+    </form>
+</body>
+
+</html>

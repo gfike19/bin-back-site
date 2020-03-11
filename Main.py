@@ -12,17 +12,37 @@ jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir), aut
 app = Flask(__name__)
 app.config['DEBUG'] = True
 
-@app.route("/", methods=['GET', 'POST'])
+@app.route("/")
 def index():
 
-    if request.method == "GET":
-        msg = "Hello world!"
-        wid = 1024
-        ht = 768
-        return render_template("index.html", msg=msg, wid=wid, ht=ht)
+    # if request.method == "GET":
+    msg = "Hello world!"
+    wid = 1024
+    ht = 768
+    return render_template("index.html", msg=msg, wid=wid, ht=ht)
 
     # try: 
-    if request.method == "POST":
+    # if request.method == "POST":
+       
+    #     return send_file(img_io, mimetype='image/jpeg')
+
+            # return redirect("/downloads")
+            # try:
+                #return send_file("imageName", as_attachment=True, mimetype="image/jpeg", attachment_filename='imageName')
+                #return send_file(imageName, mimetype=None, as_attachment=False, attachment_filename=None, add_etags=True, cache_timeout=None, conditional=False, last_modified=None)
+                #send_from_directory(file_dir, filename, as_attachment=True, mimetype='application/pdf', attachment_filename=(str(filename) + '.pdf'))
+            # except Exception as e:
+            #     error = str(e)
+            #     return render_template("error.html", error=error)
+
+            
+    # except Exception as e:
+    #     error = str(e)
+    #     return render_template("error.html", error=error)
+
+@app.route('/return-files/')
+def return_files_tut():
+    try:
         msg = (request.form['msg'])
         wid = int(request.form['wid'])
         ht = int(request.form['ht'])
@@ -55,46 +75,27 @@ def index():
 
         if tType == "rtl":
             rtl(draw, msg, img_size, txt_color, "Arial", text_size)
-        
+
         if tType == "ltr":
             ltr(draw, msg, img_size, txt_color, font, text_size)
-        
+
         if tType == "btt":
             btt(draw, msg, img_size, txt_color, font, text_size)
-        
+
         if tType == "ttb":
             ttb(draw, msg, img_size, txt_color, font, text_size)
-        
+
         if rot > 0:
             img.rotate(rot)
         imageName = msg + ".jpg"
         img.save(imageName)
         img.close()
-        img_io = io.StringIO()
-        img.save(img_io, 'JPEG', quality=70)
-        img_io.seek(0)
-        return send_file(img_io, mimetype='image/jpeg')
-
-            # return redirect("/downloads")
-            # try:
-                #return send_file("imageName", as_attachment=True, mimetype="image/jpeg", attachment_filename='imageName')
-                #return send_file(imageName, mimetype=None, as_attachment=False, attachment_filename=None, add_etags=True, cache_timeout=None, conditional=False, last_modified=None)
-                #send_from_directory(file_dir, filename, as_attachment=True, mimetype='application/pdf', attachment_filename=(str(filename) + '.pdf'))
-            # except Exception as e:
-            #     error = str(e)
-            #     return render_template("error.html", error=error)
-
-            
-    # except Exception as e:
-    #     error = str(e)
-    #     return render_template("error.html", error=error)
-
-@app.route('/return-files/')
-def return_files_tut():
-	try:
-		return send_file('/var/www/PythonProgramming/PythonProgramming/static/images/python.jpg', attachment_filename='python.jpg')
-	except Exception as e:
-		return str(e)
+        # img_io = io.StringIO()
+        # img.save(img_io, 'JPEG', quality=70)
+        # img_io.seek(0)
+        return send_static_file(img, attachment_filename='python.jpg')
+    except Exception as e:
+        return str(e)
 
 
 # @app.route("/downloads")

@@ -16,8 +16,9 @@
             <li>Image type {{ext}}</li>
         </ul>
         <!-- TODO insert refresh button to update current options -->
-        <a download="{{imageName}}}" href="{{imageName}}" title="{{imageName}}">
-            <button>Download Image</button>
+        <!-- <a download="{{imageName}}}" href="{{imageName}}" title="{{imageName}}">
+            <button>Download Image</button> -->
+            <a href="/return-files/" target="blank"><button class='btn btn-default'>Download!</button></a>
         </a>
         <h2>Message</h2>
         <label>Enter text here:
@@ -25,7 +26,7 @@
         </label>
         <br>
         <label>Text size:
-            <input type="number" name="text_size" id="text_size" value="16"/>
+            <input type="number" name="text_size" id="text_size" value="16" />
         </label>
         <span>
             <h2>Image Dimensions (in pixels)</h2>
@@ -54,13 +55,13 @@
                 <input type="radio" name="dir" value="rtl" id="dire" checked="checked" />
             </label>
             <label>Left to right
-                    <input type="radio" name="dir" value="ltr" id="dire" />
+                <input type="radio" name="dir" value="ltr" id="dire" />
             </label>
             <label>Top to bottm
                 <input type="radio" name="dir" value="ttb" id="dire" />
             </label>
             <label>Bottom to top
-                    <input type="radio" name="dir" value="btt" id="dire" />
+                <input type="radio" name="dir" value="btt" id="dire" />
             </label>
         </p>
         Text format
@@ -91,7 +92,7 @@
             </label>
         </p>
         <span>Image rotation
-            <input type="number" name="rot" id="rot" value="0"/>
+            <input type="number" name="rot" id="rot" value="0" />
         </span>
         <br>
         <label>Image type

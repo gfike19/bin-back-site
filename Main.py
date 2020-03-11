@@ -89,6 +89,14 @@ def index():
     #     error = str(e)
     #     return render_template("error.html", error=error)
 
+@app.route('/return-files/')
+def return_files_tut():
+	try:
+		return send_file('/var/www/PythonProgramming/PythonProgramming/static/images/python.jpg', attachment_filename='python.jpg')
+	except Exception as e:
+		return str(e)
+
+
 # @app.route("/downloads")
 # def download():
 #     try:

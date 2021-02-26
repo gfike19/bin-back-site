@@ -42,13 +42,7 @@ def index():
                     idx += 1
                     if idx > leng - 1:
                         idx = 0
-            # img.save(imageName)
-            # img_io = io.BufferedIOBase(img)
-            # BELOW DOESN'T WORK
-            # img.save(img_io, 'JPEG', quality=70)
-            # img_io.seek(0)
-            # return send_static_file(img_io, attachment_filename=imageName)
-            # b = bytes(img)
+
             img_byte_arr = io.BytesIO()
             img.save(img_byte_arr, format="jpeg")
             img_byte_arr = img_byte_arr.getvalue()

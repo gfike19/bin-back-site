@@ -2,31 +2,13 @@
 <html>
 <body>
     <form method="POST">
-        <h2>Current options</h2>
-        <ul>
-            <li>Message: {{msg}}</li>
-            <li>Dimenations: {{wid}} by {{ht}}</li>
-            <li>Text color: {{txt_color}} </li>
-            <li>Text size: {{text_size}}</li>
-            <li>Background color: {{back_color}}</li>
-            <li>Direction of text: {{dire}}</li>
-            <li>Text type: {{tType}}</li>
-            <li>Font: {{font}}</li>
-            <li>Image rotation: {{rot}}</li>
-            <li>Image type {{ext}}</li>
-        </ul>
-        <input type="submit" id="submit" value="Submit"/>
         <!-- TODO insert refresh button to update current options -->
         <!-- <a download="{{imageName}}}" href="{{imageName}}" title="{{imageName}}">
             <button>Download Image</button> -->
-<<<<<<< HEAD
             <!-- <a href="/return-files/" target="blank"><button class='btn btn-default'>Download!</button></a>
         </a> -->
-=======
             <!-- <a href="/return-files/" target="blank"><button class='btn btn-default'>Download!</button></a> -->
             <input type="submit" id="submit" value="Download"/>
-        </a>
->>>>>>> idea
         <h2>Message</h2>
         <label>Enter text here:
             <input type="text" name="msg" id="msg" value="{{msg}}" />
@@ -48,10 +30,10 @@
         <span>
             <h2>Color Scheme</h2>
             <label>Text color:
-                <input type="color" name="txt_color" id="txt_color" value="{{tx_color}}" />
+                <input type="color" name="txt_color" id="txt_color" value="#00FF41" />
             </label>
             <label>Background color:
-                <input type="color" name="back_color" id="back_color" value="{{back_color}}">
+                <input type="color" name="back_color" id="back_color" value="#0D0208">
             </label>
         </span>
         <p>
@@ -82,17 +64,17 @@
         <p>
             <label>Text style:
                 <select name="font">
-                    <option name="arial" id="arial" selected="selected">Arial</option>
-                    <option name="arialb" id="arialb">Arial Black</option>
-                    <option name="cent" id="cent">Century Gothic</option>
-                    <option name="comic" id="comic">Comic Sans MS</option>
-                    <option name="courier" id="courier">Courier New</option>
-                    <option name="georgia" id="georgia">Georgia</option>
-                    <option name="impact" id="impact">Impact</option>
-                    <option name="lg" id="lg">Lucida Grande</option>
-                    <option name="pal" id="pal">Palatino</option>
-                    <option name="tahoma" id="tahoma">Tahoma</option>
-                    <option name="times" id="times">Times New Roman</option>
+                    <option value="arial" id="arial" selected="selected">Arial</option>
+                    <option value="arialb" id="arialb">Arial Black</option>
+                    <option value="cent" id="cent">Century Gothic</option>
+                    <option value="comic" id="comic">Comic Sans MS</option>
+                    <option value="courier" id="courier">Courier New</option>
+                    <option value="georgia" id="georgia">Georgia</option>
+                    <option value="impact" id="impact">Impact</option>
+                    <option value="lg" id="lg">Lucida Grande</option>
+                    <option value="pal" id="pal">Palatino</option>
+                    <option value="tahoma" id="tahoma">Tahoma</option>
+                    <option value="times" id="times">Times New Roman</option>
                     <option value="tre" id="treb">Trebuchet MS</option>
                     <option value="ver" id="ver">Verdana</option>
                 </select>

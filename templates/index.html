@@ -1,17 +1,40 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+        </body>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Binary Background Generator</title>
+    </head>
+</head>
+
 <body>
     <form method="POST">
-        <!-- TODO insert refresh button to update current options -->
-        <!-- <a download="{{imageName}}}" href="{{imageName}}" title="{{imageName}}">
-            <button>Download Image</button> -->
-            <!-- <a href="/return-files/" target="blank"><button class='btn btn-default'>Download!</button></a>
-        </a> -->
-            <!-- <a href="/return-files/" target="blank"><button class='btn btn-default'>Download!</button></a> -->
-            <input type="submit" id="submit" value="Download"/>
+        <div class="form-group">
+            <label htmlfor="msg">Enter text here: </label>
+            <input type="text" name="msg" id="msg" value="Hello World!" />
+        </div>
         <h2>Message</h2>
         <label>Enter text here:
-            <input type="text" name="msg" id="msg" value="{{msg}}" />
+            
         </label>
         <br>
         <label>Text size:
@@ -21,10 +44,10 @@
             <h2>Image Dimensions (in pixels)</h2>
             <!-- TODO insert options for popular sites -->
             <label>Width:
-                <input type="number" name="wid" id="wid" value="{{wid}}" />
+                <input type="number" name="wid" id="wid" value="1024" />
             </label>
             <label>Height:
-                <input type="number" name="ht" id="ht" value="{{ht}}" />
+                <input type="number" name="ht" id="ht" value="768" />
             </label>
         </span>
         <span>
@@ -37,21 +60,21 @@
             </label>
         </span>
         <p>
-            <h1>Additional options</h1>
-            Text direction
-            <br>
-            <label>Right to left
-                <input type="radio" name="dir" value="rtl" id="dire" checked="checked" />
-            </label>
-            <label>Left to right
-                <input type="radio" name="dir" value="ltr" id="dire" />
-            </label>
-            <label>Top to bottm
-                <input type="radio" name="dir" value="ttb" id="dire" />
-            </label>
-            <label>Bottom to top
-                <input type="radio" name="dir" value="btt" id="dire" />
-            </label>
+        <h1>Additional options</h1>
+        Text direction
+        <br>
+        <label>Right to left
+            <input type="radio" name="dir" value="rtl" id="dire" checked="checked" />
+        </label>
+        <label>Left to right
+            <input type="radio" name="dir" value="ltr" id="dire" />
+        </label>
+        <label>Top to bottm
+            <input type="radio" name="dir" value="ttb" id="dire" />
+        </label>
+        <label>Bottom to top
+            <input type="radio" name="dir" value="btt" id="dire" />
+        </label>
         </p>
         Text format
         <br>
@@ -91,6 +114,7 @@
                 <option name=".bmp" id=".bmp">BMP</option>
             </select>
         </label>
+        <input type="submit" id="submit" value="Download" />
     </form>
 </body>
 

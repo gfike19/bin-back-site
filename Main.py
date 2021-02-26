@@ -1,11 +1,10 @@
 from flask import Flask, request, redirect, render_template, send_file
 import os
 import jinja2
-from binConv import *
-from rgbConv import *
+import binConv
+import rgbConv
 import io
 import tempfile
-from shutil import copyfileobj
 
 template_dir = os.path.join(os.path.dirname(__file__), 'templates')
 jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir), autoescape=True)
@@ -17,10 +16,7 @@ app.config['DEBUG'] = True
 def index():
 
     if request.method == "GET":
-        msg = "Hello world!"
-        wid = 1024
-        ht = 768
-        return render_template("index.html", msg=msg, wid=wid, ht=ht)
+        return render_template("index.html")
     
     if request.method == "POST":
         try:

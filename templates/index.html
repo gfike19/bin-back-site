@@ -2,119 +2,124 @@
 <html lang="en">
 
 <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
-        </body>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Binary Background Generator</title>
-    </head>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    </body>
+    <title>Binary Background Generator</title>
 </head>
 
 <body>
-    <form method="POST">
+    <h1>Binary Background Generator</h1>
+    <form method="POST" class="form-inline">
         <div class="form-group">
-            <label htmlfor="msg">Enter text here: </label>
+            <label htmlfor="msg" class="control-label">Enter text here: </label>
             <input type="text" name="msg" id="msg" value="Hello World!" />
         </div>
-        <h2>Message</h2>
-        <label>Enter text here:
-            
-        </label>
-        <br>
-        <label>Text size:
-            <input type="number" name="text_size" id="text_size" value="16" />
-        </label>
-        <span>
-            <h2>Image Dimensions (in pixels)</h2>
-            <!-- TODO insert options for popular sites -->
-            <label>Width:
-                <input type="number" name="wid" id="wid" value="1024" />
-            </label>
-            <label>Height:
-                <input type="number" name="ht" id="ht" value="768" />
-            </label>
-        </span>
-        <span>
-            <h2>Color Scheme</h2>
-            <label>Text color:
-                <input type="color" name="txt_color" id="txt_color" value="#00FF41" />
-            </label>
-            <label>Background color:
-                <input type="color" name="back_color" id="back_color" value="#0D0208">
-            </label>
-        </span>
-        <p>
-        <h1>Additional options</h1>
-        Text direction
-        <br>
-        <label>Right to left
-            <input type="radio" name="dir" value="rtl" id="dire" checked="checked" />
-        </label>
-        <label>Left to right
-            <input type="radio" name="dir" value="ltr" id="dire" />
-        </label>
-        <label>Top to bottm
-            <input type="radio" name="dir" value="ttb" id="dire" />
-        </label>
-        <label>Bottom to top
-            <input type="radio" name="dir" value="btt" id="dire" />
-        </label>
-        </p>
-        Text format
-        <br>
-        <label>Plaintext
-            <input type="radio" name="tType" id="tType" value="plain">
-        </label>
-        <label>Binary
-            <input type="radio" name="tType" id="tType" value="bin" checked="checked" />
-        </label>
-        <p>
-            <label>Text style:
-                <select name="font">
-                    <option value="arial" id="arial" selected="selected">Arial</option>
-                    <option value="arialb" id="arialb">Arial Black</option>
-                    <option value="cent" id="cent">Century Gothic</option>
-                    <option value="comic" id="comic">Comic Sans MS</option>
-                    <option value="courier" id="courier">Courier New</option>
-                    <option value="georgia" id="georgia">Georgia</option>
-                    <option value="impact" id="impact">Impact</option>
-                    <option value="lg" id="lg">Lucida Grande</option>
-                    <option value="pal" id="pal">Palatino</option>
-                    <option value="tahoma" id="tahoma">Tahoma</option>
-                    <option value="times" id="times">Times New Roman</option>
-                    <option value="tre" id="treb">Trebuchet MS</option>
-                    <option value="ver" id="ver">Verdana</option>
-                </select>
-            </label>
-        </p>
-        <span>Image rotation
-            <input type="number" name="rot" id="rot" value="0" />
-        </span>
-        <br>
-        <label>Image type
-            <select name="ext">
-                <option name=".jpg" id=".jpg" selected="selected">JPG</option>
-                <option name=".gif" id=".gif">GIF</option>
-                <option name=".bmp" id=".bmp">BMP</option>
+        <!-- TODO insert select with popular size options -->
+        <!-- TODO auto set width and height based on size select dropdown -->
+        <!-- TODO make font select a datalist ? -->
+        <!-- TODO proper way to make select options accessible? -->
+        <div class="form-group">
+            <label htmlfor="fontSz" class="control-label">Font Size: </label>
+            <input type="number" name="fontSz" id="fontSz" value="16" />
+        </div>
+        <div class="form-group">
+            <label htmlfor="txtColor" class="control-label">Text Color: </label>
+            <input type="color" name="txtColor" id="txtColor" value="#00FF41" />
+        </div>
+        <div class="form-group">
+            <label htmlfor="font" class="control-label">Font: </label>
+            <select name="font" id="font">
+                <option value="arial.ttf" id="arial" selected="selected">Arial</option>
+                <option value="arialblack.ttf" id="arialb">Arial Black</option>
+                <option value="centurygothic.ttf" id="cent">Century Gothic</option>
+                <option value="comicsans.ttf" id="comic">Comic Sans MS</option>
+                <option value="couriernew.ttf" id="courier">Courier New</option>
+                <option value="georgia.ttf" id="georgia">Georgia</option>
+                <option value="impact.ttf" id="impact">Impact</option>
+                <option value="lucidagrande.ttf" id="lg">Lucida Grande</option>
+                <option value="palatino.ttf" id="pal">Palatino</option>
+                <option value="tahoma.ttf" id="tahoma">Tahoma</option>
+                <option value="timesnewroman.ttf" id="times">Times New Roman</option>
+                <option value="trebuchetms.ttf" id="treb">Trebuchet MS</option>
+                <option value="verdana.ttf" id="ver">Verdana</option>
             </select>
-        </label>
-        <input type="submit" id="submit" value="Download" />
+        </div>
+        <div class="form-group">
+            <label htmlfor="bckColor" class="control-label">Background Color: </label>
+            <input type="color" name="bckColor" id="bckColor" value="#0D0208">
+        </div>
+        <input type="submit" id="submit" value="Download" class="btn-primary" />
+
+
+        <button class="btn dropdown-toggle" type="button" data-toggle="collapse width" data-target="#additional"
+            aria-expanded="true" aria-controls="additional">
+            <b>Additional Options</b><span class="caret"></span>
+        </button>
+        <div class="collapse" id="additional">
+            <div class="card card-body">
+                <b>Text Direction</b>
+                <div class="form-group">
+                    <label htmlfor="rtl" class="control-label">Right to left: </label>
+                    <input type="radio" name="dir" value="rtl" id="dire" checked="checked" />
+                    <label htmlfor="ltr" class="control-label">Left to right: </label>
+                    <input type="radio" name="dir" value="ltr" id="dire" />
+                    <label htmlfor="ttb" class="control-label">Top to bottom: </label>
+                    <input type="radio" name="dir" value="ttb" id="dire" />
+                    <label htmlfor="btt" class="control-label">Bottom to top: </label>
+                    <input type="radio" name="dir" value="btt" id="dire" />
+                </div>
+                <b>Text Format</b>
+                <div class="form-group">
+                    <label html="bin">Binary (1's & 0's): </label>
+                    <input type="checkbox" name="bin" id="bin" checked="checked" />
+                </div>
+                <b>Image Rotation</b>
+                <div class="form-group">
+                    <label htmlfor="rot">Image Rotation</label>
+                    <input type="number" name="rot" id="rot" value="0" />
+                </div>
+            </div>
+
+        </div>
+
+        <button class="btn dropdown-toggle" type="button" data-toggle="collapse" data-target="#technical"
+            aria-expanded="true" aria-controls="technical">
+            <b>Technical Options</b><span class="caret"></span></button>
+        <div class="collapse" id="technical">
+            <div class="card card-body">
+                <div class="form-group">
+                    <label htmlfor="wid" class="control-label">Width: </label>
+                    <input type="number" name="wid" id="wid" value="1024" />
+                </div>
+                <div class="form-group">
+                    <label htmlfor="ht" class="control-label">Height: </label>
+                    <input type="number" name="ht" id="ht" value="768" />
+                </div>
+                <div class="form-group">
+                    <label htmlfor="ext" class="control-label">Extension: </label>
+                    <select name="ext">
+                        <option name=".jpg" id=".jpg" selected="selected">JPG</option>
+                        <option name=".gif" id=".gif">GIF</option>
+                        <option name=".bmp" id=".bmp">BMP</option>
+                    </select>
+                </div>
+            </div>
+        </div>
     </form>
 </body>
 

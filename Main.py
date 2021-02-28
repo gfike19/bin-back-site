@@ -45,8 +45,12 @@ def index():
             wid = int(request.form['wid'])
             ht = int(request.form['ht'])
 
-            # TODO need to create dictionary or something to generate format dynamically so image can be downloaded
             extension = request.form['ext']
+            extDict = {
+                ".bmp" : "bmp", ".gif" : "gif", ".jpg": "jpeg", ".tiff": "tiff"
+            }
+            fileFormat = extDict[extension]
+
             imageSz = (wid, ht)
             
             # create image object to use in functions
@@ -63,7 +67,7 @@ def index():
             # converts image to binary, writes byte array to temporary file, puts array at the begining 
             # file is returned to user
             img_byte_arr = io.BytesIO()
-            img.save(img_byte_arr, format="jpeg")
+            img.save(img_byte_arr, format=fileFormat)
             img_byte_arr = img_byte_arr.getvalue()
             fp = tempfile.TemporaryFile()
             fp.write(img_byte_arr)

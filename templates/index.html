@@ -24,7 +24,8 @@
 
 <body>
     <h1>Binary Background Generator</h1>
-    <form method="POST" class="form-inline">
+    <form method="POST">
+        <p>
         <div class="form-group">
             <label htmlfor="msg" class="control-label">Enter text here: </label>
             <input type="text" name="msg" id="msg" value="Hello World!" />
@@ -64,24 +65,24 @@
             <input type="color" name="bckColor" id="bckColor" value="#0D0208">
         </div>
         <input type="submit" id="submit" value="Download" class="btn-primary" />
-
-
-        <button class="btn dropdown-toggle" type="button" data-toggle="collapse" data-target="#additional"
-            aria-expanded="true" aria-controls="additional">
-            <b>Additional Options</b><span class="caret"></span>
-        </button>
+        </p>
+        <p>
+            <button class="btn dropdown-toggle" type="button" data-toggle="collapse" data-target="#additional"
+                aria-expanded="true" aria-controls="additional">
+                <b>Additional Options</b><span class="caret"></span>
+            </button>
         <div class="collapse" id="additional">
             <div class="card card-body">
                 <b>Text Direction</b>
-                <div class="form-group">
-                    <label htmlfor="rtl" class="control-label">Right to left: </label>
-                    <input type="radio" name="dir" value="rtl" id="dire" checked="checked" />
-                    <label htmlfor="ltr" class="control-label">Left to right: </label>
-                    <input type="radio" name="dir" value="ltr" id="dire" />
-                    <label htmlfor="ttb" class="control-label">Top to bottom: </label>
-                    <input type="radio" name="dir" value="ttb" id="dire" />
+                <div class="form-check">
+                    <label htmlfor="rtl" class="form-check-label">Right to left: </label>
+                    <input type="radio" name="dir" value="rtl" id="dire" checked="checked" class="form-check-label"/>
+                    <label htmlfor="ltr" class="form-check-label">Left to right: </label>
+                    <input type="radio" name="dir" value="ltr" id="dire" class="form-check-label"/>
+                    <label htmlfor="ttb" class="form-check-label">Top to bottom: </label>
+                    <input type="radio" name="dir" value="ttb" id="dire" class="form-check-label"/>
                     <label htmlfor="btt" class="control-label">Bottom to top: </label>
-                    <input type="radio" name="dir" value="btt" id="dire" />
+                    <input type="radio" name="dir" value="btt" id="dire" class="form-check-label"/>
                 </div>
                 <b>Text Format</b>
                 <div class="form-group">
@@ -121,6 +122,11 @@
                 </div>
             </div>
         </div>
+        </p>
+
+
+
+
     </form>
 </body>
 

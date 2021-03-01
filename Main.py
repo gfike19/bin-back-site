@@ -24,7 +24,7 @@ def index():
     if request.method == "POST":
         try:
             # filename will be generated from msg
-            msg = request.form['msg']
+            msg = request.form['msg'] + " "
             fileName = msg + ""
             fontSz = int(request.form['fontSz'])
             txtColor = request.form['txtColor']
@@ -36,7 +36,7 @@ def index():
 
             # additional options
             textDirection = request.form['dir']
-            binary = bool(request.form['bin'])
+            binary = bool(request.form.getlist('bin'))
 
             # TODO add capability to rotate image
             # rot = request.form['rot']
@@ -59,9 +59,18 @@ def index():
             # mutates img
             if textDirection == "rtl":
                 imageCreator.rtl(draw, msg, imageSz, txtColor, font, fontSz)
+            
+            if textDirection == "ltr":
+                imageCreator.ltr(draw, msg, imageSz, txtColor, font, fontSz)
+            
+            if textDirection == "ttb":
+                imageCreator.ttb(draw, msg, imageSz, txtColor, font, fontSz)
+            
+            if textDirection == "btt":
+                imageCreator.btt(draw, msg, imageSz, txtColor, font, fontSz)
 
-            # converts image to binary, writes byte array to temporary file, puts array at the begining 
-            # file is returned to user
+            # converts image to binary, writes bytes to array which is sent to a temporary file, puts array at the begining of
+            # file before it is returned to user so stream works properly
             img_byte_arr = io.BytesIO()
             img.save(img_byte_arr, format="jpeg")
             img_byte_arr = img_byte_arr.getvalue()

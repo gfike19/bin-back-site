@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
+    Required meta tags
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
+    Bootstrap CSS
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -30,10 +30,6 @@
             <label htmlfor="msg" class="control-label">Enter text here: </label>
             <input type="text" name="msg" id="msg" value="Hello World!" />
         </div>
-        <!-- TODO insert select with popular size options -->
-        <!-- TODO auto set width and height based on size select dropdown -->
-        <!-- TODO make font select a datalist ? -->
-        <!-- TODO proper way to make select options accessible? -->
         <div class="form-group">
             <label htmlfor="fontSz" class="control-label">Font Size: </label>
             <input type="number" name="fontSz" id="fontSz" value="16" />
@@ -61,16 +57,16 @@
             </select>
         </div>
         <div class="form-group">
-            <label htmlfor="res" class="control-label">Size: </label>
+            <label htmlfor="res" class="control-label">Size (measured in pixels): </label>
             <select name="res" id="res">
                 <option value="" disabled>Desktop/Laptop</option>
-                <option value="pcSmall" selected>Small (default)</option>
-                <option value="pcMedium">Medium</option>
-                <option value="pcLarge">Large</option>
+                <option value="1024, 768" selected>Small (1024, 768) (default)</option>
+                <option value="1280, 1024">Medium (1280, 1024)</option>
+                <option value="1920, 1080">Large (1920, 1080)</option>
                 <option value="" disabled>Phone</option>
-                <option value="phoneSmall">Small</option>
-                <option value="phoneMed">Medium</option>
-                <option value="phoneLarge">Large</option>
+                <option value="320, 480">Small (320, 480)</option>
+                <option value="640, 960">Medium (640, 960)</option>
+                <option value="1240, 1920">Large (1240, 1920)</option>
             </select>
         </div>
         <div class="form-group">
@@ -89,27 +85,20 @@
                 <b>Text Direction</b>
                 <div class="form-check">
                     <label htmlfor="rtl" class="form-check-label">Right to left: </label>
-                    <input type="radio" name="dir" value="rtl" id="dire" checked="checked" class="form-check-label"/>
+                    <input type="radio" name="dir" value="rtl" id="dire" checked="checked" class="form-check-label" />
                     <label htmlfor="ltr" class="form-check-label">Left to right: </label>
-                    <input type="radio" name="dir" value="ltr" id="dire" class="form-check-label"/>
+                    <input type="radio" name="dir" value="ltr" id="dire" class="form-check-label" />
                     <label htmlfor="ttb" class="form-check-label">Top to bottom: </label>
-                    <input type="radio" name="dir" value="ttb" id="dire" class="form-check-label"/>
+                    <input type="radio" name="dir" value="ttb" id="dire" class="form-check-label" />
                     <label htmlfor="btt" class="control-label">Bottom to top: </label>
-                    <input type="radio" name="dir" value="btt" id="dire" class="form-check-label"/>
+                    <input type="radio" name="dir" value="btt" id="dire" class="form-check-label" />
                 </div>
                 <b>Text Format</b>
                 <div class="form-group">
                     <label html="bin">Binary (1's & 0's): </label>
                     <input type="checkbox" name="bin" id="bin" checked="checked" />
                 </div>
-                <!-- TODO add capability to rotate image -->
-                <!-- <b>Image Rotation</b>
-                <div class="form-group">
-                    <label htmlfor="rot">Image Rotation</label>
-                    <input type="number" name="rot" id="rot" value="0" />
-                </div> -->
             </div>
-
         </div>
 
         <button class="btn dropdown-toggle" type="button" data-toggle="collapse" data-target="#technical"
@@ -117,14 +106,6 @@
             <b>Technical Options</b><span class="caret"></span></button>
         <div class="collapse" id="technical">
             <div class="card card-body">
-                <div class="form-group">
-                    <label htmlfor="wid" class="control-label">Width: </label>
-                    <input type="number" name="wid" id="wid" value="1024" />
-                </div>
-                <div class="form-group">
-                    <label htmlfor="ht" class="control-label">Height: </label>
-                    <input type="number" name="ht" id="ht" value="768" />
-                </div>
                 <div class="form-group">
                     <label htmlfor="ext" class="control-label">Extension: </label>
                     <select name="ext">

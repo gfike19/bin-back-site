@@ -15,6 +15,13 @@ jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir), aut
 app = Flask(__name__)
 app.config['DEBUG'] = True
 
+# TODO auto set width and height based on size select dropdown and have separate inputs for them
+# TODO make font select a datalist ? 
+# TODO proper way to make select options accessible? 
+# TODO find way to implement both a dropdown for sizing and enter numbers indefpendtly that
+# doesn't confuse users
+# TODO add capability to rotate image
+
 @app.route("/", methods=['GET', 'POST'])
 def index():
 
@@ -29,6 +36,13 @@ def index():
             fontSz = int(request.form['fontSz'])
             txtColor = request.form['txtColor']
             font = request.form["font"]
+
+            res = request.form["res"]
+            arr = res.split(", ")
+            wid = int(arr[0])
+            ht = int(arr[1])
+            imageSz = (wid, ht)
+
             font = ImageFont.truetype(font, fontSz)
             bckColor = request.form['bckColor']
 
@@ -42,16 +56,14 @@ def index():
             # rot = request.form['rot']
 
             # technical options
-            wid = int(request.form['wid'])
-            ht = int(request.form['ht'])
+            # wid = int(request.form['wid'])
+            # ht = int(request.form['ht'])
 
             extension = request.form['ext']
             extDict = {
                 ".bmp" : "bmp", ".gif" : "gif", ".jpg": "jpeg", ".tiff": "tiff"
             }
             fileFormat = extDict[extension]
-
-            imageSz = (wid, ht)
             
             # create image object to use in functions
             img = Image.new("RGB", imageSz, bckColor)

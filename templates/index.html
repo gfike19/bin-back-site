@@ -39,6 +39,8 @@
                     <div class="form-group">
                         <label htmlfor="txtColor" class="control-label">Text Color: </label>
                         <input type="color" name="txtColor" id="txtColor" value="#00FF41" />
+                        <label htmlfor="bckColor" class="control-label">Background Color: </label>
+                        <input type="color" name="bckColor" id="bckColor" value="#0D0208">
                     </div>
                     <div class="form-group">
                         <label htmlfor="res" class="control-label">Size (measured in pixels): </label>
@@ -52,10 +54,6 @@
                             <option value="640, 960">Medium (640, 960)</option>
                             <option value="1240, 1920">Large (1240, 1920)</option>
                         </select>
-                    </div>
-                    <div class="form-group">
-                        <label htmlfor="bckColor" class="control-label">Background Color: </label>
-                        <input type="color" name="bckColor" id="bckColor" value="#0D0208">
                     </div>
                     <input type="submit" id="submit" value="Download" class="btn-primary" />
                 </div>
@@ -73,10 +71,9 @@
                                     class="form-check-label" />
                                 <label htmlfor="ltr" class="form-check-label">Left to right: </label>
                                 <input type="radio" name="dir" value="ltr" id="dire" class="form-check-label" />
+                                <br/>
                                 <label htmlfor="ttb" class="form-check-label">Top to bottom: </label>
                                 <input type="radio" name="dir" value="ttb" id="dire" class="form-check-label" />
-                                <label htmlfor="btt" class="control-label">Bottom to top: </label>
-                                <input type="radio" name="dir" value="btt" id="dire" class="form-check-label" />
                             </div>
                             <b>Text Format</b>
                             <div class="form-group">

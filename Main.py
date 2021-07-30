@@ -35,7 +35,7 @@ def index():
             fileName = msg + ""
             fontSz = int(request.form['fontSz'])
             txtColor = request.form['txtColor']
-            font = request.form["font"]
+            font = "arial"
 
             res = request.form["res"]
             arr = res.split(", ")

@@ -1,3 +1,4 @@
+#!/usr/bin/env python3.9.6
 from flask import Flask, request, redirect, render_template, send_file
 import os
 import jinja2

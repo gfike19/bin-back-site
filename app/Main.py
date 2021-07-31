@@ -98,4 +98,5 @@ def index():
         except Exception as e:
             return str(e)
 
-app.run()
+if __name__ == '__main__':
+    app.run()

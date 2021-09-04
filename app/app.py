@@ -9,6 +9,11 @@ import tempfile
 from PIL import ImageFont
 from PIL import Image
 from PIL import ImageDraw
+import bugsnag
+bugsnag.configure(
+  api_key = "29fedc1cf738b65167ca91b01e9f06cb",
+  project_root = "/c/Users/aerot/coding/bin-back-site/app",
+)
 
 template_dir = os.path.join(os.path.dirname(__file__), 'templates')
 jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir), autoescape=True)

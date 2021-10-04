@@ -78,7 +78,8 @@ def indexPost():
         fp.write(img_byte_arr)
         fp.seek(0,0)
 
-        return Flask.send_file(fp, as_attachment=True, attachment_filename=fileName + extension)
+        # return Flask.send_file(fp, as_attachment=True, attachment_filename=fileName + extension)
+        return fp
     except Exception as e:
         return str(e)
 

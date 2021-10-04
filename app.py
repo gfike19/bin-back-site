@@ -79,7 +79,9 @@ def indexPost():
         fp.seek(0,0)
 
         # return Flask.send_file(fp, as_attachment=True, attachment_filename=fileName + extension)
-        return fp
+        # below doesn't work
+        # return fp
+        return render_template("disp-img.html", img=img)
     except Exception as e:
         return str(e)
 

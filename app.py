@@ -4,57 +4,9 @@ from PIL import Image
 from PIL import ImageDraw
 import tempfile
 import io
+from ImageCreator import ImageCreator
 
 app = Flask(__name__)
-
-def getBinMsg(msg):
-    lst = []
-    for char in msg:
-        lst.append(ord(char))
-
-    msg = ""
-    for each in lst:
-        msg += "{0:b}".format(each)
-
-    return msg 
-
-def rtl(draw, msg, img_size, txt_color, font, text_size):
-    leng = len(msg)
-    idx = 0
-    for x in range(0, img_size[1], text_size):
-        for y in range(0, img_size[0], text_size):
-            draw.text((y,x),msg[idx], txt_color, font=font)
-            idx += 1
-            if idx > leng - 1:
-                idx = 0
-
-def ltr(draw, msg, img_size, txt_color, font, text_size):
-    idx = len(msg)
-    for x in range(0, img_size[1], text_size):
-        for y in range(0, img_size[0], text_size):
-            draw.text((y,x),msg[idx -1], txt_color, font=font)
-            idx -= 1
-            if idx == 0:
-                idx = len(msg)
-
-def ttb(draw, msg, img_size, txt_color, font, text_size):
-    leng = len(msg)
-    idx = 0
-    for y in range(0, img_size[0], text_size):
-        for x in range(0, img_size[1], text_size):
-            draw.text((y,x),msg[idx], txt_color, font=font)
-            idx += 1
-            if idx > leng - 1:
-                idx = 0
-
-def btt(draw, msg, img_size, txt_color, font, text_size):
-    idx = len(msg)
-    for x in range(0, img_size[0], text_size):
-        for y in range(0, img_size[1],text_size):
-            draw.text((x,y),msg[idx], txt_color, font=font)
-            idx -= 1
-            if idx == 0:
-                idx = len(msg)
 
 @app.route("/", methods=['GET'])
 def indexGet():
@@ -62,6 +14,7 @@ def indexGet():
 
 @app.route("/", methods=['POST'])
 def indexPost():
+    ic = ImageCreator()
     try:
         # filename will be generated from msg
         msg = request.form['msg'] + " "
@@ -76,6 +29,7 @@ def indexPost():
         ht = int(arr[1])
         imageSz = (wid, ht)
 
+        # TODO add custom font capabilities
         # font = ImageFont.truetype(font, fontSz)
         font = ImageFont.load_default()
         bckColor = request.form['bckColor']
@@ -89,7 +43,7 @@ def indexPost():
         # TODO add capability to rotate image
         # rot = request.form['rot']
 
-        # technical options
+        # TODO add ability to create custom sized image
         # wid = int(request.form['wid'])
         # ht = int(request.form['ht'])
 
@@ -104,20 +58,20 @@ def indexPost():
         draw = ImageDraw.Draw(img)
 
         if binary == True:
-            msg = getBinMsg(msg)
+            msg = ic.getBinMsg(msg)
 
         # mutates img
         if textDirection == "rtl":
-            rtl(draw, msg, imageSz, txtColor, font, fontSz)
+            ic.rtl(draw, msg, imageSz, txtColor, font, fontSz)
         
         if textDirection == "ltr":
-            ltr(draw, msg, imageSz, txtColor, font, fontSz)
+            ic.ltr(draw, msg, imageSz, txtColor, font, fontSz)
         
         if textDirection == "ttb":
-            ttb(draw, msg, imageSz, txtColor, font, fontSz)
+            ic.ttb(draw, msg, imageSz, txtColor, font, fontSz)
         
         if textDirection == "btt":
-            btt(draw, msg, imageSz, txtColor, font, fontSz)
+            ic.btt(draw, msg, imageSz, txtColor, font, fontSz)
 
         # converts image to binary, writes bytes to array which is sent to a temporary file, puts array at the begining of
         # file before it is returned to user so stream works properly

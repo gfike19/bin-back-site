@@ -23,6 +23,7 @@ def indexPost():
         txtColor = request.form['txtColor']
         font = "arial"
 
+        # resolution is pulled from form in array/list form
         res = request.form["res"]
         arr = res.split(", ")
         wid = int(arr[0])

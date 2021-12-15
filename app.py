@@ -77,7 +77,8 @@ def indexPost():
         ht = int(arr[1])
         imageSz = (wid, ht)
 
-        font = ImageFont.truetype(font, fontSz)
+        # font = ImageFont.truetype(font, fontSz)
+        font = ImageFont.load_default()
         bckColor = request.form['bckColor']
 
         # TODO check to see if text color and background color are the same

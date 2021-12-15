@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_file
 from PIL import ImageFont
 from PIL import Image
 from PIL import ImageDraw
@@ -128,7 +128,7 @@ def indexPost():
         fp.write(img_byte_arr)
         fp.seek(0,0)
 
-        return Flask.send_file(fp, as_attachment=True, attachment_filename=fileName + extension)
+        return send_file(fp, as_attachment=True, attachment_filename=fileName + extension)
     except Exception as e:
         return str(e)
 

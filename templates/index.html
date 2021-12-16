@@ -55,7 +55,8 @@
                             <option value="1240, 1920">Large (1240, 1920)</option>
                         </select>
                     </div>
-                    <input type="submit" id="submit" value="Download" class="btn-primary" />
+                    <input type="submit" id="submit" value="Preview" name="action" class="btn-secondary" />
+                    <input type="submit" id="submit" value="Download" name="action" class="btn-primary" />
                 </div>
                 <div class="col">
                     <button class="btn dropdown-toggle" type="button" data-toggle="collapse" data-target="#additional"
@@ -106,7 +107,9 @@
 
     </form>
     </div>
-
+    <div class="container">
+        <img id="{{imageName}}" name="{{imageName}}" src="data:image/jpeg;base64,{{ img_data }}">
+    </div>
 </body>
 
 </html>

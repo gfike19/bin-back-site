@@ -16,6 +16,7 @@ def indexGet():
 @app.route("/", methods=['POST'])
 def indexPost():
     ic = ImageCreator()
+
     # filename will be generated from msg
     msg = request.form['msg'] + " "
     imageName = msg + "background image"
@@ -83,7 +84,8 @@ def indexPost():
     if request.form['action'] == "Preview":
         encoded_img_data = base64.b64encode(img_byte_arr.getvalue())
         img_data=encoded_img_data.decode('utf-8')
-        return render_template("index.html",img_data = img_data , imageName=imageName)
+        return render_template("preview.html",img_data=img_data , imageName=imageName,
+        msg=request.form['msg'], fontSz=fontSz, txtColor=txtColor, bckColor=bckColor, )
 
     img_byte_arr = img_byte_arr.getvalue()
 

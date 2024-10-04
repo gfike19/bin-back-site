@@ -62,9 +62,10 @@ def indexGet():
 
 @app.route("/", methods=['POST'])
 def indexPost():
+    action = request.form['action']
     try:
         # filename will be generated from msg
-        msg = request.form['msg'] + " "
+        msg = request.form['msg'] 
         fileName = msg + ""
         fontSz = int(request.form['fontSz'])
         txtColor = request.form['txtColor']
@@ -93,11 +94,13 @@ def indexPost():
         # wid = int(request.form['wid'])
         # ht = int(request.form['ht'])
 
-        extension = request.form['ext']
-        extDict = {
-            ".bmp" : "bmp", ".gif" : "gif", ".jpg": "jpeg", ".tiff": "tiff"
-        }
-        fileFormat = extDict[extension]
+        # extension = request.form['ext']
+        # extDict = {
+        #     ".bmp" : "bmp", ".gif" : "gif", ".jpg": "jpeg", ".tiff": "tiff"
+        # }
+        # fileFormat = extDict[extension]
+
+        fileFormat = "JPEG"
         
         # create image object to use in functions
         img = Image.new("RGB", imageSz, bckColor)
@@ -127,10 +130,12 @@ def indexPost():
         fp = tempfile.TemporaryFile()
         fp.write(img_byte_arr)
         fp.seek(0,0)
-
-        return send_file(fp, as_attachment=True, attachment_filename=fileName + extension)
+        if action == 'preview':
+            return render_template("index.html", img_data=encoded_img_data.decode('utf-8'))
+        if action == 'download':
+            return send_file(fp, as_attachment=True, download_name=fileName + ".jpeg")
     except Exception as e:
         return str(e)
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
